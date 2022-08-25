@@ -1,8 +1,11 @@
 // =================================================================
-//
+// 
 // File: activity.h
-// Author:
-// Date:
+// Author: José Diego Llaca Castro
+// Date: 25/08/22
+// Functionality: This header contains a set of three functions 
+// which calculate the sum from 1 to n with different methods such 
+// as iterative, recursive and direct.
 //
 // =================================================================
 #ifndef ACTIVITY_H
@@ -14,10 +17,18 @@
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
-// @Complexity	??
+// @Complexity	This function has a complexity of O(n) since the 
+// most complex part of it is the while loop.
+//
 // =================================================================
 unsigned int sumaIterativa(unsigned int n) {
-	return 0;
+	int count = 1;
+	int sum = 0;
+	while(count <= n){
+		sum = sum + count;
+		count++;
+	}
+	return sum;
 }
 
 // =================================================================
@@ -26,10 +37,18 @@ unsigned int sumaIterativa(unsigned int n) {
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
-// @Complexity	??
+// @Complexity	This function has a complexity of O(n) because it 
+// calls itself only one time without using divisions or 
+// multiplications.
+//
 // =================================================================
 unsigned int sumaRecursiva(unsigned int n) {
-	return 0;
+    if (n <= 1){
+        return 1;
+    }
+    else{
+        return n + sumaRecursiva(n - 1);
+    }
 }
 
 // =================================================================
@@ -38,10 +57,15 @@ unsigned int sumaRecursiva(unsigned int n) {
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
-// @Complexity	??
+// @Complexity	This function has a complexity of O(1) because the 
+// most complex part of it is the simple sentence which has a 
+// complexity of O(1).
+//
 // =================================================================
 unsigned int sumaDirecta(unsigned int n) {
-	return 0;
+	int sum;
+	sum = (n * (n + 1)) / 2;
+	return sum;
 }
 
 #endif /* ACTIVITY_H */
